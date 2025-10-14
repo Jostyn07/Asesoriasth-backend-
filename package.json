@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Backend para gestionar el formulario de Asesorias S&S, subiendo archivos a Google Drive y datos a Google Sheets.",
   "main": "server.js",
+  "types": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
