@@ -86,7 +86,7 @@ app.post('/api/login', async (req, res) => { // CORREGIDO: async.post a app.post
 
     try {
         // 1. Buscar usuario por email
-        const sql = 'SELECT id, nombre, email, password FROM users WHERE email = $1';
+        const sql = 'SELECT id, nombre, email, password, rol FROM users WHERE email = $1';
         const values = [email];
         // CORREGIDO: Se usa `query` para obtener `users`
         const users = await query(sql, values);
@@ -231,6 +231,7 @@ app.post('/api/submit-form-data', async (req, res) => {
             data.sexo || '',
             data.correo || '',
             data.telefono || '',
+            data.telefono2 || '',
             data.fechaNacimiento || '',
             data.estadoMigratorio || '',
             data.ssn || '',
@@ -269,14 +270,14 @@ app.post('/api/submit-form-data', async (req, res) => {
                 '', // Teléfono
                 dep.fechaNacimiento || '',
                 dep.estadoMigratorio || '',
-                dep.ssn || '',
+                dep.ssn || '', 
                 '', // Ingresos
                 '', // Ocupación
                 '', // Nacionalidad
                 dep.aplica || '',
                 '', // Cantidad de dependientes
                 '', // Dirección completa (vacío para dependientes)
-                '', '', '', '', '', '', '', // Campos de Póliza vacíos
+                '', '', '', '', '', '', // Campos de Póliza vacíos
                 clientId
             ]);
         });
