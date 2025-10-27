@@ -268,6 +268,7 @@ app.post('/api/submit-form-data', async (req, res) => {
                 '', // Sexo
                 '', // Correo
                 '', // Teléfono
+                '', // Teléfono 2
                 dep.fechaNacimiento || '',
                 dep.estadoMigratorio || '',
                 dep.ssn || '', 
@@ -392,3 +393,4 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+
